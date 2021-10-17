@@ -1,10 +1,19 @@
 // Create an Array of at least 3 losing messages
+var youLost = ["so sorry", "whoops", "nope"]
 
 // Create variables to count wins and losses
+var countWins = 0
+var countLosses = 0
 
 // Create variables that target elements with the following IDs: 'message', 'wins', 'losses'
+var message = document.getElementById(message);
+var winning = document.getElementById(wins);
+var losing = document.getElementById(losses);
 
 // target all .box elements and attach a click event listener to each one using a loop
+// for(var i; i <= 4; i++) {
+
+// }
 
 // within each click event...
 // determine which box was clicked with 'this.textContent' or event.target.textContent
