@@ -6,13 +6,13 @@ var countWins = 0
 var countLosses = 0
 
 // Create variables that target elements with the following IDs: 'message', 'wins', 'losses'
-var message = document.getElementById(message)
-var winning = document.getElementById(wins)
-var losing = document.getElementById(losses)
+var message = document.getElementById('message')
+var winCount = document.getElementById('wins')
+var lossCount = document.getElementById('losses')
 
 // target all .box elements and attach a click event listener to each one using a loop
 var boxes = document.querySelectorAll('.box')
-//console.log(boxes)
+console.log(boxes)
 
 for(var i = 0; i < boxes.length; i++) {
     var boxElement = boxes[i];
@@ -24,6 +24,7 @@ for(var i = 0; i < boxes.length; i++) {
         // convert that value to a Number and store it to a variable
         var clickedBox = event.target.textContent
         var clickedBoxNum = Number(clickedBox)
+        console.log(clickedBoxNum)
     }
 }
 
@@ -38,14 +39,14 @@ var winningBox = Math.floor(Math.random() * 3) + 1;
 // if the numbers match, increment wins and display the win count in div#wins
 if (this.clickedBoxNum === winningBox){
     message.textContent = "Congrats! You picked the winning box! With nothing in it!"
-    countWins += 1;
-    winning.textContent = "Wins: " + countWins;
+    countWins++
+    winCount.textContent = "Wins: " + countWins
 }
 
 // if the numbers don't match, change the div#message element's text to a random losing message from the array above
 // if the numbers don't match, increment losses and display the loss count in div#losses
-// else {
-//     //message.textContent = youLost[Math.floor(Math.random() * 3) + 1];
-//     countLosses += 1;
-//     losing.textContent = "Losses: " + countLosses;
-// }
+else {
+    message.textContent = youLost[Math.floor(Math.random() * 3) + 1];
+    countLosses += 1;
+    lossCount.textContent = "Losses: " + countLosses;
+}

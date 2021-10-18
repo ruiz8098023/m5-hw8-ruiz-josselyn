@@ -56,3 +56,8 @@ header h1 {
   border: var(--primary-color) solid 7px;
   border-radius: 5px;
 }
+
+.score {
+  text-align: center;
+  padding: 5%;
+}
